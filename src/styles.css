@@ -14,12 +14,26 @@
     align-items: center;
     text-decoration: none;
     color:lightgray; 
-    font-size:x-large
+    font-size:x-large;
+
 }
 
 a{
     background-color:cadetblue;
     border-radius: 25%;
+    margin: .25rem;
+    padding: .25rem;
+}
+
+a:hover{
+    background-color:dimgrey;
+    cursor: pointer;
+}
+
+.selected{
+   
+    color:darkslategray;
+    background-color: darkgray;
 }
 
 .logo{
