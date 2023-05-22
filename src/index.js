@@ -1,8 +1,13 @@
 import './styles.css';
 import Logo from './pizzalogo.svg'; 
 import Hero from './pizza.jpg'; 
+import peperoniPizza from './peperoniPizza.jpg'; 
+import pineapplePizza from './pineapplePizza.jpg'; 
+import mushroomPizza from './mushroomPizza.jpg'; 
+import billProfile from './billProfile.jpg'; 
+import elonProfile from './elonProfile.jpg'; 
 
-let navPosition;
+let navPosition ='main';
 
 function header(){
   const contentDiv = document.getElementById('content');
@@ -90,17 +95,143 @@ function main(){
   mainDiv.appendChild(paragraph);
 }
 
+function menu(){
+  const contentDiv = document.getElementById('content');
+
+  const menuTitleDiv = document.createElement('div');
+  menuTitleDiv.classList.add('menuTitle');
+  contentDiv.appendChild(menuTitleDiv);
+
+  const titleH1 = document.createElement('h1');
+  titleH1.textContent ='Check out our Menu:';
+  menuTitleDiv.appendChild(titleH1);
+
+  const menuDiv = document.createElement('div');
+  menuDiv.classList.add('menu');
+  contentDiv.appendChild(menuDiv);
+
+  // item1
+  const menuItem1 = document.createElement('div');
+  menuItem1.classList.add('menuItem');
+  menuDiv.appendChild(menuItem1);
+
+  const titleItem1 = document.createElement('h2');
+  titleItem1.textContent ='Peperonni Pizza:';
+  menuItem1.appendChild(titleItem1);
+
+  const peperoni = new Image();
+  peperoni.src = peperoniPizza;
+  peperoni.classList.add('menuImg')
+  menuItem1.appendChild(peperoni);
+
+  const paragraphItem1 = document.createElement('p');
+  paragraphItem1.textContent ='Lorem ipsum dolor sit amet, consectetur adipisicing Impedit.';
+  menuItem1.appendChild(paragraphItem1);
+
+  // item2
+  const menuItem2 = document.createElement('div');
+  menuItem2.classList.add('menuItem');
+  menuDiv.appendChild(menuItem2);
+
+  const titleItem2 = document.createElement('h2');
+  titleItem2.textContent ='Pineapple Pizza:';
+  menuItem2.appendChild(titleItem2);
+
+  const pineapple = new Image();
+  pineapple.src = pineapplePizza;
+  pineapple.classList.add('menuImg')
+  menuItem2.appendChild(pineapple);
+
+  const paragraphItem2 = document.createElement('p');
+  paragraphItem2.textContent ='Lorem ipsum dolor sit amet, consectetur adipisicing Impedit.';
+  menuItem2.appendChild(paragraphItem2);
+
+    // item3
+    const menuItem3 = document.createElement('div');
+    menuItem3.classList.add('menuItem');
+    menuDiv.appendChild(menuItem3);
+  
+    const titleItem3 = document.createElement('h2');
+    titleItem3.textContent ='Mushroom Pizza:';
+    menuItem3.appendChild(titleItem3);
+  
+    const mushroom = new Image();
+    mushroom.src = mushroomPizza;
+    mushroom.classList.add('menuImg')
+    menuItem3.appendChild(mushroom);
+  
+    const paragraphItem3 = document.createElement('p');
+    paragraphItem3.textContent ='Lorem ipsum dolor sit amet, consectetur adipisicing Impedit.';
+    menuItem3.appendChild(paragraphItem3);
+}
+
+function contact(){
+  const contentDiv = document.getElementById('content');
+
+  const contactTitleDiv = document.createElement('div');
+  contactTitleDiv.classList.add('contactTitle');
+  contentDiv.appendChild(contactTitleDiv);
+
+  const titleH1 = document.createElement('h1');
+  titleH1.textContent ='Who do you need to contact?:';
+  contactTitleDiv.appendChild(titleH1);
+
+  const contactsDiv = document.createElement('div');
+  contactsDiv.classList.add('contacts');
+  contentDiv.appendChild(contactsDiv);
+
+  // contact1
+  const contactItem1 = document.createElement('div');
+  contactItem1.classList.add('contactItem');
+  contactsDiv.appendChild(contactItem1);
+
+  const titleContact1 = document.createElement('h2');
+  titleContact1.textContent ='CEO:';
+  contactItem1.appendChild(titleContact1);
+
+  const elon = new Image();
+  elon.src = elonProfile;
+  elon.classList.add('menuImg')
+  contactItem1.appendChild(elon);
+
+  const paragraphContact1 = document.createElement('p');
+  paragraphContact1.textContent ='Lorem ipsum dolor sit amet, consectetur adipisicing Impedit.';
+  contactItem1.appendChild(paragraphContact1);
+
+  // contact2
+  const contactItem2 = document.createElement('div');
+  contactItem2.classList.add('contactItem');
+  contactsDiv.appendChild(contactItem2);
+
+  const titleContact2 = document.createElement('h2');
+  titleContact2.textContent ='CTO:';
+  contactItem2.appendChild(titleContact2);
+
+  const bill = new Image();
+  bill.src = billProfile;
+  bill.classList.add('menuImg')
+  contactItem2.appendChild(bill);
+
+  const paragraphContact2 = document.createElement('p');
+  paragraphContact2.textContent ='Lorem ipsum dolor sit amet, consectetur adipisicing Impedit.';
+  contactItem2.appendChild(paragraphContact2);
+}
+
 
 function updateDisplay(){
   const contentDiv = document.getElementById('content');
   contentDiv.innerHTML = '';
   header();  
-  main();  
+
+  switch (navPosition) {
+    case 'main':  main()
+    break;  
+    case 'menu':  menu()
+    break;  
+    case 'contact':  contact()
+    break;  
+  }
 }
 
 updateDisplay()
-
-
-
-
 
